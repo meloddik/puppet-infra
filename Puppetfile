@@ -1,9 +1,12 @@
-forge "http://forge.puppetlabs.com"
+forge 'https://forge.puppet.com'
 
+# Modules discovered by generate-puppetfile
+mod 'puppetlabs/accounts', '8.2.2'
+mod 'puppetlabs/ntp',      '11.0.0'
+mod 'puppetlabs/stdlib',   '9.7.0'
+mod 'saz/sudo',            '9.0.0'
+mod 'saz/timezone',        '7.0.0'
+mod 'stm/debconf',         '6.1.0'
+# Discovered elements from existing Puppetfile
 # Modules from the Puppet Forge
-mod 'puppetlabs/accounts', '1.1.0'
-mod 'puppetlabs/ntp', '6.2.0'
-mod 'puppetlabs/stdlib', '4.19.0'
-mod 'saz/sudo', '4.2.0'
-mod 'saz/timezone', '3.5.0'
-mod 'stm/debconf', '2.0.0'
+
