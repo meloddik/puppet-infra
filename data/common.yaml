@@ -1,4 +1,17 @@
 ---
+sources:
+  - "puppetlabs":
+      {
+        "comment": "Puppet8",
+        "location": "https://apt.puppetlabs.com",
+        "repos": "puppet8",
+        "key":
+          {
+            "name": "puppetlabs.gpg",
+            "source": "https://apt.puppetlabs.com/keyrings.gpg",
+          },
+      }
+
 users:
   "ubuntu":
     comment: "ubuntu"
@@ -11,6 +24,7 @@ sudoers:
   - "ubuntu"
 classes:
   - profile::ntp
+  - profile::apt
   - profile::puppet
   - profile::ssh
   - profile::sudoers
