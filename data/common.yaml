@@ -1,16 +1,34 @@
 ---
-  users:
-    'ubuntu':
-      sshkeys:
-        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCms1xAPzgy0u3YOg0XQGeTK+U6lwztJvMqTgGwLql+Z3mcCbp02EWAckNPh0DuFPdOlzrtNgms2mq3D4cxFQcyGt64tj2W6w5pf8B8I9UnD8leAz3vdfIJmlY9W3XWeY39bqBTDfO/64G1YoUd/+jHJKKuq6MlyTAUUg34cDvUzb/1lh/k6uZntpW4KQPp97GisYY9Ir9Zc4N38JKESq5r/mmZkzD0aKq1DicB1tg6YU6DdvoJ0M5eoaEiVBef8YaV6QgETC3klvLsm5GSpTNtM4Iw9qJBElHhIxQDjbuebKK5YeZ8VnLLLYIHq17Gsb3naTV4CGerO2Us/dQthA+79bNPHXjTjqK21x6PZ1oo2U/0UkgR6jr/dlPBFRtJddPpKGXHmCUhfxkNNMg5kpQoOkKxUtqu5LIovePfa8ykf3BGB38DYHCsZjVPwmaSsLwkSsqsu+vZXO0hV8F7Jn2T03BVnlDt/pQoQD3+GwV9xkgWDJcopSQmH8WB0DZSd8KRcG/ywWlryLRC6XzT3AH1oESol1QTK3RctqcUOgvEAwB2m5pWFLdVfmQ8SJp/e5cKn9fGYg+0Xy0IPnCLhGusA8Fwp1Jp4wYA0bRfRa+eX/MA2K94Vw39fuJdNzZifiLkDIUUfbRDe2IC2tsVyaokJWdJbfZfKCSat2Y8IcgKTw==
-  allow_users:
-    - 'ubuntu'
-  sudoers:
-    - 'ubuntu'
-  classes:
-    - profile::ntp
-    - profile::puppet
-    - profile::ssh
-    - profile::sudoers
-    - profile::timezone
-    - profile::users
+sources:
+  {
+    "puppetlabs":
+      {
+        "comment": "Puppet8",
+        "location": "https://apt.puppetlabs.com",
+        "repos": "puppet8",
+        "key":
+          {
+            "name": "puppetlabs.gpg",
+            "source": "http://apt.puppetlabs.com/keyring.gpg",
+          },
+      },
+  }
+
+users:
+  "ubuntu":
+    comment: "ubuntu"
+    uid: "1000"
+    sshkeys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCms1xAPzgy0u3YOg0XQGeTK+U6lwztJvMqTgGwLql+Z3mcCbp02EWAckNPh0DuFPdOlzrtNgms2mq3D4cxFQcyGt64tj2W6w5pf8B8I9UnD8leAz3vdfIJmlY9W3XWeY39bqBTDfO/64G1YoUd/+jHJKKuq6MlyTAUUg34cDvUzb/1lh/k6uZntpW4KQPp97GisYY9Ir9Zc4N38JKESq5r/mmZkzD0aKq1DicB1tg6YU6DdvoJ0M5eoaEiVBef8YaV6QgETC3klvLsm5GSpTNtM4Iw9qJBElHhIxQDjbuebKK5YeZ8VnLLLYIHq17Gsb3naTV4CGerO2Us/dQthA+79bNPHXjTjqK21x6PZ1oo2U/0UkgR6jr/dlPBFRtJddPpKGXHmCUhfxkNNMg5kpQoOkKxUtqu5LIovePfa8ykf3BGB38DYHCsZjVPwmaSsLwkSsqsu+vZXO0hV8F7Jn2T03BVnlDt/pQoQD3+GwV9xkgWDJcopSQmH8WB0DZSd8KRcG/ywWlryLRC6XzT3AH1oESol1QTK3RctqcUOgvEAwB2m5pWFLdVfmQ8SJp/e5cKn9fGYg+0Xy0IPnCLhGusA8Fwp1Jp4wYA0bRfRa+eX/MA2K94Vw39fuJdNzZifiLkDIUUfbRDe2IC2tsVyaokJWdJbfZfKCSat2Y8IcgKTw== ubuntu"
+allow_users:
+  - "ubuntu"
+sudoers:
+  - "ubuntu"
+classes:
+  - profile::ntp
+  - profile::apt
+  - profile::puppet
+  - profile::ssh
+  - profile::sudoers
+  - profile::timezone
+  - profile::users
