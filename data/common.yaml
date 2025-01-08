@@ -9,7 +9,7 @@ sources:
         "key":
           {
             "name": "puppetlabs.gpg",
-            "source": "https://apt.puppetlabs.com/keyrings.gpg",
+            "source": "http://apt.puppetlabs.com/keyrings.gpg",
           },
       },
   }
