@@ -1,6 +1,7 @@
 ---
 sources:
-  - "puppetlabs":
+  {
+    "puppetlabs":
       {
         "comment": "Puppet8",
         "location": "https://apt.puppetlabs.com",
@@ -10,7 +11,8 @@ sources:
             "name": "puppetlabs.gpg",
             "source": "https://apt.puppetlabs.com/keyrings.gpg",
           },
-      }
+      },
+  }
 
 users:
   "ubuntu":
